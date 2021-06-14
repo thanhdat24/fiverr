@@ -1,0 +1,240 @@
+.my-carousel {
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.06);
+  margin-bottom: $mg-2;
+  .my-carousel__content {
+    background-color: #eef2f5;
+    height: 580px;
+    padding-top: $pd-5;
+    position: relative;
+    .background__triangle {
+      border-bottom: 30vw solid $color-green-6;
+      border-left: 80vw solid transparent;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .carousel__form {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      .carousel__search {
+        box-sizing: content-box;
+        max-width: 543px;
+        width: auto;
+        padding-left: $pd-6;
+        h1 {
+          @include styleText($color-gray-7, $fs-2, $fw-4);
+          padding-bottom: $pd-3;
+          margin: 0;
+        }
+        .carousel__input {
+          @include styleForm(
+            48px,
+            $color-gray-9,
+            $fs-1,
+            $fw-2,
+            $pd-10 + 3,
+            $pd-10 + 2,
+            $pd-10 + 3,
+            $pd-7,
+            $color-gray-10,
+            16px,
+            1.5rem
+          );
+          .button-solid {
+            height: 48px;
+            padding: $pd-2 + 2 $pd-3 + 4;
+            font-size: $fs-0;
+          }
+          input {
+            height: 48px;
+          }
+        }
+        .carousel__search-popular {
+          padding-top: $pd-3;
+          span {
+            @include styleText($color-gray-2, $fs-1 - 1, $fw-3);
+            padding-right: $pd-2 + 2;
+          }
+          a {
+            @include styleText($color-gray-2, $fs-1 - 1, $fw-1);
+            border: 1px solid $color-gray-13;
+            border-radius: $border-radius-1;
+            line-height: $line-height-1 - 3;
+            padding: 4px $pd-2 - 2;
+            text-decoration: none;
+            margin-right: $mg-6;
+            transition: all ease 0.3s;
+            &:hover {
+              background-color: $color-gray-13;
+            }
+          }
+        }
+      }
+    }
+    .carousel__slide {
+      position: absolute;
+      display: inline-block;
+      left: 20px;
+      margin-left: 55%;
+      bottom: 0;
+      .carousel-item {
+        max-width: 500px;
+      }
+      .carousel-caption {
+        display: inline-block;
+        padding: 0;
+        text-align: left;
+        bottom: 15px;
+        left: 40%;
+        .carousel-caption__stars {
+          i {
+            color: $color-yellow-1;
+            font-size: $fs-1 - 3;
+            text-align: left;
+          }
+        }
+        p {
+          @include styleText($color-white-1, $fs-1 - 2, $fw-2);
+          letter-spacing: 0.5px;
+          line-height: $line-height-4;
+          margin-bottom: 0;
+        }
+      }
+    }
+    &::after {
+      content: "";
+      height: 120px;
+      width: 100%;
+      background: linear-gradient(180deg, transparent, $color-black-2);
+      position: absolute;
+      bottom: 0;
+      opacity: 0.4;
+    }
+  }
+  .carousel__partners {
+    height: 60px;
+    padding: 0 $pd-11;
+    .carousel__partners-list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      .carousel__partners-logo {
+        padding-right: $pd-8;
+      }
+    }
+  }
+}
+
+@include responsive("large-1") {
+  .my-carousel {
+    .my-carousel__content {
+      height: 430px;
+      .background__triangle {
+        display: none;
+      }
+      .carousel__slide {
+        display: none;
+      }
+      &::after {
+        display: none;
+      }
+      .carousel__form {
+        .carousel__search-popular {
+          display: none;
+        }
+        .carousel__search {
+          max-width: 420px;
+          min-height: 200px;
+          width: 65%;
+          padding: 0 24px 32px;
+          margin: 0 auto;
+          h1 {
+            font-size: $fs-2 - 3;
+            text-align: center;
+          }
+          .carousel__input {
+            .input-group {
+              .form-control {
+                display: block;
+                width: 100%;
+                border-right: 1px solid $color-gray-10;
+              }
+              button {
+                display: block;
+                width: 100%;
+                margin-top: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .carousel__partners {
+      height: 50px;
+      .carousel__partners-list {
+        .carousel__partners-logo {
+          padding-right: 24px;
+          img {
+            height: 50px;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include responsive("large") {
+  .my-carousel {
+    margin-bottom: 88px;
+  }
+}
+
+@include responsive("small-1") {
+  .my-carousel {
+    margin-bottom: 60px;
+    .my-carousel__content {
+      height: auto;
+      padding-top: 24px;
+      .carousel__form {
+        .carousel__search {
+          width: auto;
+          max-width: 380px;
+          padding: 0 24px 60px;
+
+          h1 {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+  .carousel__partners {
+    .carousel__partners-list {
+      .carousel__partners-logo {
+        &.logo-none-padding {
+          padding-right: 0;
+        }
+        &:nth-child(5) {
+          display: none;
+        }
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  .my-carousel {
+    .my-carousel__content {
+      .carousel__form {
+        .carousel__search {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+}

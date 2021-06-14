@@ -1,0 +1,58 @@
+.started {
+  .started__content {
+    padding: 0 $pd-4 + 2;
+    margin-bottom: $mg-2;
+    background: url("../img/find-freelancer-services.jpg") no-repeat center
+      center;
+    background-size: cover;
+    .started__detail {
+      text-align: center;
+      padding: $pd-7 + 4;
+      h3 {
+        @include styleText($color-gray-7, $fs-7, $fw-4);
+        line-height: $line-height-2;
+        padding-bottom: $pd-10 + 1;
+        margin: 0;
+      }
+      p {
+        @include styleText($color-gray-2, $fs-0, $fw-2);
+        padding: $pd-10 + 1 0 $pd-4 + 2;
+        margin: 0;
+      }
+      button {
+        padding: $pd-1 - 3 $pd-11;
+        font-size: $fs-0;
+      }
+    }
+  }
+}
+
+@include responsive("large") {
+  .started {
+    .started__content {
+      margin-bottom: 88px;
+    }
+  }
+}
+
+@include responsive("medium") {
+  .started {
+    .started__content {
+      padding: 0;
+      .started__detail {
+        padding: $pd-11;
+        h3 {
+          font-size: $fs-9;
+        }
+      }
+    }
+  }
+}
+
+@include responsive("small-1") {
+  .started {
+    .started__content {
+      margin-bottom: 64px;
+    }
+  }
+}

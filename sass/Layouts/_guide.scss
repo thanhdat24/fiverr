@@ -1,0 +1,113 @@
+.guide {
+  .guide__content {
+    padding: 0 $pd-4 + 2;
+    margin-bottom: $mg-2;
+    @extend %section-title-with-link;
+    .title {
+      padding-bottom: 0;
+    }
+    .guide__list {
+      .guide__item {
+        a {
+          text-decoration: none;
+          img {
+            padding-bottom: $pd-1 + 1;
+            border-radius: $border-radius-2;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+            &:hover {
+              opacity: 0.85;
+            }
+          }
+          h4 {
+            @include styleText($color-gray-7, $fs-6, $fw-3);
+            padding-top: $pd-2;
+            padding-bottom: $pd-10 - 3;
+            margin: 0;
+          }
+          p {
+            @include styleText($color-gray-7, $fs-0, $fw-6);
+            white-space: nowrap;
+            margin: 0;
+          }
+        }
+      }
+    }
+    .see-more {
+      text-decoration: none;
+      line-height: $line-height-1;
+      i {
+        padding-left: $pd-2 - 2;
+        font-size: $fs-0;
+      }
+      display: none;
+    }
+  }
+}
+
+@include responsive("large") {
+  .guide {
+    .guide__content {
+      margin-bottom: 88px;
+      .title {
+        h2 {
+          font-size: 22px;
+        }
+        a {
+          display: none;
+        }
+      }
+      .see-more {
+        display: block;
+      }
+    }
+  }
+}
+@include responsive("small-1") {
+  .guide {
+    .guide__content {
+      margin-bottom: 64px;
+      .title {
+        h2 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include responsive("medium") {
+  .guide {
+    .guide__content {
+      .guide__list {
+        .guide__item {
+          margin-bottom: 32px;
+          a {
+            img {
+              object-fit: cover;
+              width: 100%;
+              height: 200px;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .guide {
+    .guide__content {
+      .guide__list {
+        .guide__item {
+          a {
+            p {
+              white-space: pre-wrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}

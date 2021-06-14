@@ -1,0 +1,196 @@
+.footer {
+  .footer__content {
+    border-top: 1px solid $color-gray-15;
+    padding: $pd-8 + 4 $pd-4 + 2 $pd-11;
+    .footer__detail {
+      border-bottom: 1px solid $color-gray-15;
+      display: flex;
+      .footer__col {
+        width: 20%;
+        padding-right: $pd-11 + 1;
+        .footer__title {
+          text-decoration: none;
+          h3 {
+            @include styleText($color-gray-7, $fs-0, $fw-3);
+            line-height: $line-height-1;
+            padding-bottom: $pd-3;
+            margin: 0;
+          }
+          i {
+            display: none;
+          }
+        }
+        ul {
+          list-style: none;
+          a {
+            display: block;
+            line-height: $line-height-1;
+            @include styleText($color-gray-2, $fs-0, $fw-1);
+            padding-bottom: $pd-3;
+            position: relative;
+            span {
+              display: block;
+              @include styleText($color-gray-5, $fs-1 - 1, $fw-2);
+            }
+          }
+        }
+      }
+    }
+    .footer__copyright {
+      display: flex;
+      justify-content: space-between;
+      .footer__copyright--left {
+        padding-top: $pd-11;
+        span {
+          display: inline-block;
+          @include styleText($color-gray-5, $fs-1 - 1, $fw-2);
+          margin-left: $mg-5 + 4;
+          line-height: $line-height-1;
+          vertical-align: middle;
+        }
+      }
+      .footer__copyright--right {
+        padding-top: $pd-11;
+        ul {
+          list-style: none;
+          margin-bottom: 0;
+          li {
+            display: inline-block;
+            margin-right: $mg-5;
+            a {
+              text-decoration: none;
+              color: $color-gray-8;
+              font-size: $fs-5 - 3;
+            }
+            &:hover {
+              .language:hover {
+                svg {
+                  fill: $color-gray-8;
+                }
+              }
+            }
+          }
+          .footer__icon {
+            height: 32px;
+            width: 32px;
+            text-align: center;
+            line-height: $line-height-3 + 2;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              background-color: $color-gray-16;
+            }
+          }
+          .language-currency__item {
+            font-size: $fs-1 - 1;
+            color: $color-gray-9;
+            padding: $pd-10 + 3 $pd-2 + 2;
+            border-radius: 20px;
+            background-color: transparent;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              background-color: $color-gray-16;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .footer {
+    .footer__content {
+      .footer__copyright {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    .footer__content {
+      .footer__copyright {
+        display: block;
+        .footer__copyright--left {
+          text-align: center;
+          span {
+            display: block;
+            margin-top: 8px;
+            margin-left: 0;
+          }
+        }
+        .footer__copyright--right {
+          ul {
+            text-align: center;
+            li {
+              &:last-child {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                display: block;
+                margin-right: 0;
+                padding-top: 16px;
+                .language-currency {
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include responsive("large") {
+  .footer {
+    .footer__content {
+      padding: $pd-11;
+      .footer__detail {
+        display: block;
+        width: 100%;
+        .footer__col {
+          display: block;
+          width: 100%;
+
+          .footer__title {
+            display: flex;
+            justify-content: space-between;
+            h3 {
+              padding-bottom: 20px;
+              display: inline-block;
+            }
+            i {
+              display: inline-block;
+              color: $color-gray-7;
+              font-size: 14px;
+              position: relative;
+              &::before {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                transition: all 0.2s;
+              }
+            }
+          }
+          .collapsed {
+            i {
+              &::before {
+                transform: translateY(-50%) rotate(180deg);
+              }
+            }
+          }
+          a {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

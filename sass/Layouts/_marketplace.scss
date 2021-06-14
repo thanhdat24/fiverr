@@ -1,0 +1,50 @@
+.marketplace {
+  .marketplace__content {
+    padding: 0 $pd-4 + 2;
+    margin-bottom: $mg-2 - 55;
+    @extend %section-title;
+    h2 {
+      padding-bottom: $pd-11;
+      margin-bottom: $mg-1;
+    }
+    .marketplace__selection {
+      padding: 0 $pd-2 $pd-12;
+      .marketplace__link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        &::after {
+          content: "";
+          box-sizing: content-box;
+          display: inline-block;
+          position: absolute;
+          top: 45px;
+          right: 50%;
+          transform: translateX(50%);
+          width: 48px;
+          padding: 0 0 $pd-2 - 2;
+          border-bottom: 2px solid $color-gray-13;
+          transition: all 0.2s ease;
+        }
+        &:hover {
+          &::after {
+            padding: 0 $pd-3 $pd-2 - 2;
+            border-color: $color-green-1;
+          }
+        }
+        img {
+          height: 48px;
+          width: 48px;
+          margin: 0 auto $mg-8;
+          position: relative;
+        }
+        p {
+          @include styleText($color-black-1, $fs-0, $fw-1);
+          line-height: $line-height-1;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

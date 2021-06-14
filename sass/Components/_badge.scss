@@ -1,0 +1,25 @@
+.new__badge {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  @include styleText($color-pink-1, $fs-8, $fw-4);
+  line-height: 1em;
+  border: 1px solid $color-pink-1;
+  border-radius: $border-radius-3;
+  padding: $pd-10 - 2 $pd-10 + 2 $pd-10 - 3;
+  text-align: center;
+  margin-left: $mg-6 - 4;
+}
+
+.beta__badge {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  @include styleText($color-blue-1, $fs-8, $fw-4);
+  line-height: 1em;
+  border: 1px solid $color-blue-1;
+  border-radius: $border-radius-3;
+  padding: $pd-10 - 2 $pd-10 + 2 $pd-10 - 3;
+  text-align: center;
+  margin-left: $mg-6 - 4;
+}

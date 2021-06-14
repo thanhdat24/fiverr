@@ -1,0 +1,112 @@
+.project {
+  margin-bottom: $mg-2;
+  .project__content {
+    padding: 0 $pd-4 + 2;
+    @extend %section-title;
+    h2 {
+      padding: 0;
+    }
+    .title {
+      padding-bottom: $pd-11;
+      margin: 0;
+      a {
+        text-decoration: none;
+        line-height: $line-height-1;
+        padding-top: $pd-1 + 1;
+        i {
+          padding-left: $pd-2 - 2;
+          font-size: $fs-0;
+        }
+      }
+    }
+    .project__item {
+      box-shadow: 0 1px 5px 1px $color-black-4;
+      border-radius: $border-radius-2;
+      margin: $mg-7 0;
+      img {
+        height: 237px;
+        width: 100%;
+        object-fit: cover;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: $border-radius-2 $border-radius-2 0 0;
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+      .project__info {
+        padding: $pd-2 0 $pd-1 $pd-3;
+        display: flex;
+        .project__info-avatar {
+          img {
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            margin-top: $pd-10;
+          }
+        }
+        .project__text {
+          padding-left: $pd-2 + 2;
+          a {
+            text-decoration: none;
+            display: block;
+            line-height: $line-height-1;
+          }
+          .project__name {
+            @include styleText($color-black-1, $fs-1 - 1, $fw-4);
+          }
+          .project__freelancer {
+            @include styleText($color-black-1, $fs-1 -1, $fw-2);
+          }
+        }
+      }
+    }
+    .see-more-medium {
+      text-decoration: none;
+      line-height: $line-height-1;
+      padding-top: $pd-1 + 1;
+      i {
+        padding-left: $pd-2 - 2;
+        font-size: $fs-0;
+      }
+      display: none;
+    }
+  }
+}
+
+@include responsive("large") {
+  .project {
+    .project__content {
+      margin-bottom: 88px;
+      h2 {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@include responsive("small-1") {
+  .project {
+    .project__content {
+      margin-bottom: 64px;
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@include responsive("medium") {
+  .project {
+    .project__content {
+      .title {
+        a {
+          display: none;
+        }
+      }
+      .see-more-medium {
+        display: block;
+      }
+    }
+  }
+}

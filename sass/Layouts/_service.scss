@@ -1,0 +1,58 @@
+.services {
+  .services__content {
+    padding: 0 $pd-4 + 2;
+    margin-bottom: $mg-2;
+    @extend %section-title;
+    .services__slider {
+      .services__item {
+        .services__img {
+          img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: $border-radius-2;
+          }
+          .services__caption {
+            padding: $pd-1;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            p {
+              @include styleText($color-white-1, $fs-1, $fw-1);
+              line-height: $line-height-1 - 1;
+              margin: 0;
+            }
+            h3 {
+              @include styleText($color-white-1, $fs-5, $fw-4);
+              line-height: $line-height-1 - 1;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include responsive("large") {
+  .services {
+    .services__content {
+      margin-bottom: 88px;
+      h2 {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@include responsive("small-1") {
+  .services {
+    .services__content {
+      margin-bottom: 64px;
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+}

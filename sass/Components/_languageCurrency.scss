@@ -1,0 +1,34 @@
+// Language - Currency
+.language-currency {
+  display: flex;
+  .language-currency__item {
+    @include styleText($color-gray-2, $fs-1, $fw-3);
+    &:hover {
+      text-decoration: none;
+      color: $color-green-1;
+      .language__icon {
+        svg {
+          fill: $color-green-1;
+        }
+      }
+    }
+  }
+  .language {
+    padding-right: $pd-3;
+    .language__icon {
+      vertical-align: middle;
+      display: inline-block;
+      height: 16px;
+      width: 24px;
+      line-height: $line-height-1;
+      svg {
+        display: block;
+        height: 16px;
+        width: 24px;
+        padding-right: $pd-10 + 3;
+        transform: translateY(-3px);
+        fill: $color-gray-9;
+      }
+    }
+  }
+}

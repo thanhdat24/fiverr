@@ -1,0 +1,57 @@
+.tool {
+  .tool__content {
+    padding: 0 $pd-4 + 2;
+    margin-bottom: $mg-2;
+    .tool__text {
+      @extend %left-side-title;
+      .tool__services {
+        @extend %left-side-content;
+      }
+    }
+  }
+}
+
+@include responsive("large") {
+  .tool {
+    .tool__content {
+      margin-bottom: 88px;
+      .tool__text {
+        padding-right: 0;
+        h2 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+@include responsive("small-1") {
+  .tool {
+    .tool__content {
+      margin-bottom: 64px;
+      h2 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .tool {
+    .tool__content {
+      .tool__text {
+        padding-right: 7%;
+      }
+      .tool__img {
+        .tool__gif {
+          height: 100%;
+          position: relative;
+          img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+}

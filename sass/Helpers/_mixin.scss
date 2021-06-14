@@ -1,0 +1,169 @@
+// Set text
+@mixin styleText($text-color, $fs, $fw) {
+  color: $text-color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+// Set form
+@mixin styleForm(
+  $height,
+  $color,
+  $fs,
+  $fw,
+  $pd1,
+  $pd2,
+  $pd3,
+  $pd4,
+  $border-color,
+  $icon-left,
+  $line-height
+) {
+  .input-group {
+    height: $height;
+    input {
+      @include styleText($color, $fs, $fw);
+      padding: $pd1 $pd2 $pd3 $pd4;
+      border-right: none;
+      border-color: $border-color;
+      position: relative;
+      &::placeholder {
+        @include styleText($color, $fs, $fw);
+      }
+      &:focus {
+        box-shadow: none;
+        border-color: $color-gray-11;
+      }
+    }
+    i {
+      position: absolute;
+      top: 50%;
+      left: $icon-left;
+      transform: translateY(-50%);
+      color: $color-gray-11;
+      font-size: 16px;
+      z-index: 4;
+    }
+    .input-group-append {
+      border-radius: 0 $border-radius-1 $border-radius-1 0;
+      line-height: $line-height;
+    }
+  }
+}
+
+// Set button
+@mixin styleButton(
+  $bg-color,
+  $color,
+  $border-color,
+  $border-radius,
+  $pd-y,
+  $pd-x,
+  $fs,
+  $fw,
+  $line-height
+) {
+  background-color: $bg-color;
+  color: $color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: $pd-y $pd-x;
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $line-height;
+}
+
+// Dropdown menu
+@mixin styleDropdownLeft($columns, $avoid-break, $pd-link) {
+  display: block;
+  position: absolute;
+  left: -20px;
+  display: none;
+  .dropdown__content {
+    padding: $pd-3 $pd-4;
+    border: 1px solid $color-gray-12;
+    background-color: $color-white-1;
+    box-shadow: 0 1px 3px $color-gray-10;
+    column-count: $columns;
+    column-gap: 50px;
+    .dropdown__menu {
+      -webkit-column-break-inside: $avoid-break;
+      page-break-inside: $avoid-break;
+      list-style: none;
+      padding-bottom: $pd-3;
+      .dropdown__item {
+        white-space: nowrap;
+        line-height: $line-height-1;
+        min-height: 32px;
+        display: flex;
+        .dropdown__title {
+          @include styleText($color-gray-7, $fs-0, $fw-3);
+          line-height: $line-height-1;
+          padding: $pd-2 - 2 0;
+          margin: 0;
+        }
+        .dropdown__link {
+          display: block;
+          line-height: $line-height-1;
+          @include styleText($color-gray-8, $fs-0, $fw-2);
+          padding: $pd-link 0;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+@mixin styleDropdownRight($columns, $avoid-break, $pd-link) {
+  display: block;
+  position: absolute;
+  right: -20px;
+  display: none;
+  .dropdown__content {
+    padding: $pd-3 $pd-4;
+    border: 1px solid $color-gray-12;
+    background-color: $color-white-1;
+    box-shadow: 0 1px 3px $color-gray-10;
+    column-count: $columns;
+    column-gap: 50px;
+    .dropdown__menu {
+      -webkit-column-break-inside: $avoid-break;
+      page-break-inside: $avoid-break;
+      list-style: none;
+      padding-bottom: $pd-3;
+      .dropdown__item {
+        white-space: nowrap;
+        line-height: $line-height-1;
+        min-height: 32px;
+        display: flex;
+        .dropdown__title {
+          @include styleText($color-gray-7, $fs-0, $fw-3);
+          line-height: $line-height-1;
+          padding: $pd-2 - 2 0;
+          margin: 0;
+        }
+        .dropdown__link {
+          display: block;
+          line-height: $line-height-1;
+          @include styleText($color-gray-8, $fs-0, $fw-2);
+          padding: $pd-link 0;
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@mixin responsive($screen) {
+  @if map-has-key($map: $break-points, $key: $screen) {
+    $value: map-get(
+      $map: $break-points,
+      $key: $screen,
+    );
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "`{value}` isn't exist in breakpoints";
+  }
+}

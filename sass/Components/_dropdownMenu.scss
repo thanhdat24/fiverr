@@ -1,0 +1,11 @@
+.dropdown-menu__4 {
+  @include styleDropdownLeft(4, avoid, $pd-10 - 1);
+}
+
+.dropdown-menu__2--left {
+  @include styleDropdownLeft(2, none, $pd-2 - 2);
+}
+
+.dropdown-menu__2--right {
+  @include styleDropdownRight(2, none, $pd-2 - 2);
+}

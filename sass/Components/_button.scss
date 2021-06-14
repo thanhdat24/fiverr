@@ -1,0 +1,75 @@
+.button-solid {
+  @include styleButton(
+    $color-green-1,
+    $color-white-1,
+    $color-green-1,
+    $border-radius-1,
+    $pd-10 + 3,
+    $pd-1 + 1,
+    $fs-1 - 1,
+    $fw-4,
+    1rem
+  );
+  transition: all 0.3s;
+  &:hover {
+    background-color: $color-green-5;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.button-outline {
+  @include styleButton(
+    transparent,
+    $color-green-1,
+    $color-green-1,
+    $border-radius-1,
+    $pd-10 + 2,
+    $pd-3,
+    $fs-1 - 1,
+    $fw-4,
+    1rem
+  );
+  transition: all 0.3s;
+  &:hover {
+    color: $color-white-1;
+    background-color: $color-green-1;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.button-outline--header {
+  border-color: $color-gray-1;
+  @include styleText($color-gray-1, $fs-1 - 1, $fw-4);
+  transition: all 0.3s;
+  &:hover {
+    color: $color-white-1;
+    border-color: $color-green-1;
+  }
+}
+
+.button-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 1px solid $color-black-5;
+  background-color: $color-black-5;
+  i {
+    @include styleText($color-white-1, $fs-4, 900);
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+  }
+  &:focus {
+    outline: none;
+  }
+}

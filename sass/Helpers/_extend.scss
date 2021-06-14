@@ -1,0 +1,105 @@
+%section-title {
+  h2 {
+    @include styleText($color-gray-7, $fs-7, $fw-4);
+    line-height: $line-height-2;
+    padding-bottom: $pd-3;
+    margin: 0;
+  }
+}
+
+%section-title-with-link {
+  @extend %section-title;
+  .title {
+    padding-bottom: $pd-11;
+    margin: 0;
+    a {
+      text-decoration: none;
+      line-height: $line-height-1;
+      padding-top: $pd-1 + 1;
+      i {
+        padding-left: $pd-2 - 2;
+        font-size: $fs-0;
+      }
+    }
+  }
+}
+
+%left-side-title {
+  padding-right: $pd-14;
+  @extend %section-title;
+}
+
+%left-side-content {
+  padding: 0;
+  padding-bottom: $pd-11;
+  h3 {
+    @include styleText($color-gray-7, $fs-6, $fw-4);
+    padding-bottom: $pd-10 - 1;
+    margin: 0;
+    line-height: 1.4rem;
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      display: inline-block;
+      box-sizing: content-box;
+      height: 16px;
+      width: 16px;
+      padding-right: $pd-2;
+      background: url("../img/checkmark.svg") no-repeat;
+      background-size: 16px;
+    }
+  }
+  p {
+    @include styleText($color-gray-2, $fs-0, $fw-2);
+    line-height: $line-height-1;
+    margin: 0;
+  }
+}
+
+%popup-video {
+  .modal-video-popup {
+    padding-right: 0 !important;
+    position: relative;
+    .modal-dialog {
+      position: fixed;
+      margin: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70vw;
+      @media (min-width: 1200px) {
+        max-width: 900px;
+      }
+      .modal-content {
+        border: none;
+        background-color: transparent;
+        .modal-header-content {
+          padding: 0;
+          .close {
+            padding: 0;
+            font-size: $fs-4 + 2;
+            color: $color-white-1;
+            margin: 0;
+            text-shadow: 0 0;
+            opacity: 1;
+            &:focus {
+              outline: none;
+            }
+            &:hover {
+              opacity: 0.75;
+            }
+          }
+        }
+        .modal-body-content {
+          padding: 0;
+          video {
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

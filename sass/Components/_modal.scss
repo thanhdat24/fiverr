@@ -1,0 +1,222 @@
+.language-currency-modal {
+  padding-right: 0 !important;
+  .modal-dialog {
+    width: 400px;
+    margin: 5rem auto;
+  }
+  .modal-content {
+    .modal-header {
+      padding: $pd-4 + 2 $pd-4 + 2 $pd-11;
+      border: none;
+      h2 {
+        @include styleText($color-gray-7, $fs-5 - 2, $fw-4);
+      }
+      button {
+        font-size: $fs-2;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .modal-body--scroll {
+      overflow: scroll;
+    }
+    .modal-body {
+      max-height: 400px;
+      padding: 0;
+      ul {
+        list-style: none;
+
+        li {
+          display: block;
+          width: 100%;
+          padding: $pd-2 $pd-4 + 2;
+          margin-bottom: $mg-6;
+          &:hover {
+            background-color: $color-white-3;
+            cursor: pointer;
+          }
+          a {
+            @include styleText($color-gray-2, $fs-0, $fw-2);
+            text-decoration: none;
+            span {
+              font-size: $fs-1 - 2;
+              font-weight: $fw-3;
+              padding-right: $pd-3;
+              opacity: 0;
+            }
+            &.active {
+              span {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.login-join-modal {
+  padding-right: 0 !important;
+  .modal-dialog {
+    width: 400px;
+    .modal-content {
+      .modal-header {
+        padding: 0 $pd-13 - 2;
+        border: none;
+        h2 {
+          width: 100%;
+          text-align: center;
+          padding: $pd-4 + 2 0;
+          @include styleText($color-gray-7, $fs-5 + 2, $fw-4);
+          line-height: 130%;
+          margin: 0;
+        }
+      }
+      .modal-body {
+        padding: 0 $pd-13 - 2;
+        .social {
+          padding: $pd-2 + 2 $pd-4 $pd-2 + 2 $pd-1 + 1;
+          margin-bottom: $mg-6 + 2;
+          border: 1px solid $color-gray-15;
+          border-radius: $border-radius-2;
+          &:not(.facebook):hover {
+            background-color: $color-white-4;
+          }
+          a {
+            text-decoration: none;
+            text-align: left;
+            @include styleText($color-gray-9, $fs-0, $fw-3);
+            i {
+              height: 20px;
+              width: 20px;
+              line-height: 20px;
+              text-align: center;
+              font-size: $fs-6;
+            }
+            span {
+              padding-left: $pd-13;
+            }
+          }
+        }
+        .facebook {
+          background-color: $color-blue-2;
+          border-color: $color-blue-2;
+          &:hover {
+            opacity: 0.9;
+          }
+          a {
+            color: $color-white-1;
+          }
+        }
+        .apple {
+          a {
+            i {
+              color: #000;
+            }
+          }
+        }
+        .form-separator {
+          height: 12px;
+          margin: $mg-3 + 1 0 $mg-4;
+          text-align: center;
+          border-bottom: 1px solid $color-gray-15;
+          span {
+            @include styleText($color-gray-7, $fs-1 - 1, $fw-2);
+            padding: 0 $pd-10 + 3;
+            background-color: $color-white-1;
+          }
+        }
+        .form-login {
+          .form-control {
+            width: 100%;
+            height: auto;
+            padding: $pd-10 + 3 $pd-2 + 2;
+            margin-bottom: $pd-1 + 1;
+            border-color: $color-gray-13;
+            color: $color-gray-7;
+            line-height: $line-height-1;
+            &:hover {
+              outline: none;
+              border-color: $color-gray-17;
+            }
+            &:focus {
+              border-color: $color-gray-17;
+              box-shadow: inset 2px 2px 2px #e4e5e7;
+            }
+          }
+          button {
+            display: block;
+            width: 100%;
+            padding: $pd-2 + 2 $pd-11;
+            border: 1px solid transparent;
+            border-radius: $border-radius-2;
+            @include styleText($color-white-1, $fs-0, $fw-3);
+            line-height: 1rem;
+            background-color: $color-green-1;
+          }
+        }
+        .remember-forgot {
+          padding-top: $pd-1 - 1;
+          .remember {
+            input {
+              height: 18px;
+              width: 18px;
+              border: 1px solid #c5c6c9;
+              border-radius: 2px;
+              margin-right: 8px;
+              vertical-align: middle;
+              &:checked {
+                border-color: #c5c6c9;
+                background-color: transparent;
+                color: $color-gray-2;
+              }
+            }
+            label {
+              margin: 0;
+              @include styleText($color-gray-2, $fs-1 - 1, $fw-2);
+              line-height: $line-height-4;
+            }
+          }
+          .forgot {
+            a {
+              text-decoration: none;
+              @include styleText($color-green-1, $fs-1 - 1, $fw-2);
+            }
+          }
+        }
+        .agree {
+          p {
+            width: 100%;
+            text-align: center;
+            @include styleText($color-gray-2, $fs-1 - 1, $fw-1);
+            padding: $pd-3 0 $pd-11;
+          }
+        }
+      }
+      .modal-footer {
+        padding: $pd-1;
+        margin-top: -16px;
+        p {
+          margin: 0;
+          width: 100%;
+          text-align: center;
+          @include styleText($color-gray-2, $fs-1 - 1, $fw-2);
+          a {
+            text-decoration: none;
+            color: $color-green-1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include responsive("small-1") {
+  .login-join-modal {
+    .modal-dialog {
+      margin: 1.75rem auto;
+    }
+  }
+}
